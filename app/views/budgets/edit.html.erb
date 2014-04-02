@@ -1,0 +1,14 @@
+<p id="notice" style="color:red;"><%= flash[:notice] %></p>
+
+<h1>Edit budget</h1>
+
+<%= form_for @budget, url: {action: "update"} do |f| %>
+	
+  	<p><%= f.label(:name, "Name:") %>
+  	<%= f.text_field(:name, :required => true) %>
+
+  	<p><%= f.label(:amount, "Amount:") %>
+  	<%= f.text_field(:amount, :required => true) %>
+
+	<%= f.submit("Update") %>
+<% end %>

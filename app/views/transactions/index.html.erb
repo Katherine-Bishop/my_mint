@@ -1,0 +1,19 @@
+<table>
+	<tr>
+		<th style="width: 300px; text-align:left;">Description</th>
+		<th style="width: 200px; text-align:left;">Date</th>
+		<th style="width: 100px; text-align:left;">Amount</th>
+		<th style="width: 100px; text-align:left;">Category</th>
+	</tr>
+		
+<h1>Transactions</h1>
+<% @transactions.each do |transaction| %>
+	<tr>
+		<td><%= transaction.description %></td>
+		<td><%= transaction.date %></td>
+		<td><%= transaction.amount %></td>
+		<td><%= transaction.category %></td>
+	</tr>
+<% end %>
+
+</table>

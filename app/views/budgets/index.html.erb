@@ -1,0 +1,31 @@
+<p>Budgets</p>
+
+<p id="notice" style="color:red;"><%= flash[:notice] %></p>
+
+<table>
+	<tr>
+		<th style="width: 300px; text-align:left;">Name</th>
+		<th style="width: 200px; text-align:left;">Amount</th>
+	</tr>
+		
+<h1>Budgets</h1>
+<% @budgets.each do |budget| %>
+	<tr>
+		<td><%= budget.name %></td>
+		<td><%= budget.amount %></td>
+		<td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+		<td><%= link_to 'Delete', budget_path(budget), method: :delete %></td>
+	</tr>
+<% end %>
+
+</table>
+
+<%= link_to 'Add budget', new_budget_path %>
+
+<% @budgets.each do |budget| %>
+	<div class="progress" style="max-width: 500px;">
+	  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= budget.amount %>;">
+	    <span class="sr-only"><%= budget.amount %> Complete</span>
+	  </div>
+	</div>
+<% end %>	

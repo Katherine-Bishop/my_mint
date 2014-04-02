@@ -1,0 +1,6 @@
+<p id="notice" style="color:red;"><%= flash[:notice] %></p>
+
+<%= form_tag({:action => 'import'}, {:multipart => true}) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+<% end %>
