@@ -1,6 +1,13 @@
 class BudgetsController < ApplicationController
 		def index
 			@budgets = Budget.all
+			@budget_utilized = [];
+			@percentage_utilized = [];
+			@budgets.each do |budget|
+				@budget_utilized[budget.id] = budget.budget_utilized
+				logger.debug "Name: #{budget}"
+				@percentage_utilized[budget.id] = (@budget_utilized[budget.id]/budget.amount)*100
+			end	
 		end	
 		
 		def new
@@ -32,10 +39,6 @@ class BudgetsController < ApplicationController
 				render 'edit'	
 				flash[:notice] = 'Budget was NOT successfully edited.'
 			end	
-		end	
-
-		def show
-			@budget = Budget.find(params[:id])
 		end	
 
 		def destroy
