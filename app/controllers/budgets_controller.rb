@@ -3,10 +3,12 @@ class BudgetsController < ApplicationController
 			@budgets = Budget.all
 			@budget_utilized = [];
 			@percentage_utilized = [];
+			@budgets_total = 0;
 			@budgets.each do |budget|
 				@budget_utilized[budget.id] = budget.budget_utilized
 				logger.debug "Name: #{budget}"
 				@percentage_utilized[budget.id] = (@budget_utilized[budget.id]/budget.amount)*100
+				@budgets_total += budget.amount
 			end	
 		end	
 		

@@ -1,0 +1,14 @@
+<p id="notice" style="color:red;"><%= flash[:notice] %></p>
+
+<h1>Edit budget category</h1>
+
+<%= form_for @budget_category, url: {action: "update"} do |f| %>
+	
+  	<p><%= f.label :budget_id %><br />
+  	<%= f.select(:budget_id, Budget.all.map {|b| [b.name,b.id]}, :prompt => "Select a Budget") %></p>
+
+  	<p><%= f.label(:category, "Category:") %>
+  	<%= f.text_field(:category, :required => true) %></p>
+
+	<%= f.submit("Update") %>
+<% end %>

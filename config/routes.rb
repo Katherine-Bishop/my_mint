@@ -54,12 +54,14 @@ MyMint::Application.routes.draw do
   #     resources :products
   #   end
 
-  root to: 'dashboard#index'
+  root to: 'application#index'
 
   resources :transactions do
     collection { post :import }
   end
 
   resources :budgets 
+
+  resources :budget_categories 
 
 end

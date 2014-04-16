@@ -1,0 +1,12 @@
+<p id="notice" style="color:red;"><%= flash[:notice] %></p>
+		
+<h1>Budget Categories</h1>
+<%= link_to 'Add budget category', new_budget_category_path %>
+<% @budgets.each do |budget| %>
+	<h4><%= budget.name %></h4>
+	<% @budget_categories.each do |budget_category| %>
+		<% if budget_category.budget_id == budget.id %>
+			<p><%= budget_category.category %>  <%= link_to 'Edit', edit_budget_category_path(budget_category) %>           <%= link_to 'Delete', budget_category_path(budget_category), method: :delete %></p>
+		<% end %>
+	<% end %>		
+<% end %>

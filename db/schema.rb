@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405022915) do
+ActiveRecord::Schema.define(version: 20140407214308) do
+
+  create_table "budget_categories", force: true do |t|
+    t.integer "budget_id"
+    t.string  "category"
+  end
 
   create_table "budgets", force: true do |t|
     t.string   "name"
@@ -30,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140405022915) do
     t.string   "transaction_type"
     t.string   "category"
     t.string   "account_name"
+    t.integer  "budget_id"
   end
 
 end
