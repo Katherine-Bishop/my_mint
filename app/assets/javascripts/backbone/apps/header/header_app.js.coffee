@@ -1,4 +1,4 @@
-@Demo.module "HeaderApp", (HeaderApp, App, Backbone, Marionette, $, _) ->
+@MyMint.module "HeaderApp", (HeaderApp, App, Backbone, Marionette, $, _) ->
 	@startWithParent = false
 	
 	API =

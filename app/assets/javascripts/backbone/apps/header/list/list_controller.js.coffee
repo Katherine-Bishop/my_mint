@@ -1,4 +1,4 @@
-@Demo.module "HeaderApp.List", (List, App, Backbone, Marionette, $, _) ->
+@MyMint.module "HeaderApp.List", (List, App, Backbone, Marionette, $, _) ->
 	
 	List.Controller =
 		
