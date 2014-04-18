@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'rails-backbone'
 gem 'marionette-rails'
+gem 'bootstrap-sass'
 gem 'rabl'
 gem 'oj'
 
