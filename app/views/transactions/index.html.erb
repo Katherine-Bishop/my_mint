@@ -18,12 +18,13 @@
 			<td><%= transaction.amount %></td>
 			<td><%= transaction.category %></td>
 			<td><%= transaction.account_name %></td>
-			<td><% if transaction.budget_id != nil %>
+			<td><%= transaction.budget_name %>
+			<!-- <td><% if transaction.budget_id != nil %>
 					<%= @budget_names[transaction.budget_id] %>
 				<% else %>
 					N/A
 				<% end %>
-			</td>
+			</td> -->
 			<td><%= link_to 'Edit', edit_transaction_path(transaction) %>           <%= link_to 'Delete', transaction_path(transaction), method: :delete %></td>
 		</tr>
 	<% end %>

@@ -1,3 +1,1 @@
-collection @transactions
-
-attributes :description, :id
+attributes :description, :amount, :budget_name

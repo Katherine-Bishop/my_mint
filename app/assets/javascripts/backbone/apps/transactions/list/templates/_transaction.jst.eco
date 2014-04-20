@@ -1,2 +1,3 @@
-<td><%= @full_name %></td>
-<td><%= @created_at_formatted %></td>
+<td><%= @transaction.description %></td>
+<td><%= @transaction.amount %></td>
+<td><%= @transaction.budget_name %></td>

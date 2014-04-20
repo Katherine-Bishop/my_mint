@@ -2,7 +2,7 @@
 	
 	List.Controller =
 		
-		listTransactionss: ->
+		listTransactions: ->
 			App.request "transaction:entities", (transactions) =>
 			
 				@layout = @getLayoutView()
@@ -19,6 +19,7 @@
 		
 		showTransactions: (transactions) ->
 			transactionsView = @getTransactionsView transactions
+			window.transactions = transactions
 			@layout.transactionsRegion.show transactionsView
 		
 		getTransactionsView: (transactions) ->

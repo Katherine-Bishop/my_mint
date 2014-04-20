@@ -39,4 +39,15 @@ class Transaction < ActiveRecord::Base
     			)
 	  	end
 	end
+
+	def budget_name
+		budget = Budget.where(:id => budget_id)
+		if budget.length > 0
+			budget_name = budget.first.name
+		else
+			budget_name = ''	
+		end
+		logger.debug "Budget name is: #{budget_name}"
+		"#{budget_name}"
+	end
 end

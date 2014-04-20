@@ -1,1 +1,2 @@
-Total Users: <%= @items.length %>
+Total Transactions: <%= @items.length %>
+<% window.transactions = @items %>

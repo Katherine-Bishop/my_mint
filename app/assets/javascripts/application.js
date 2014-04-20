@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require turbolinks
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone.marionette
+//= require js-routes
 //= require backbone/my_mint
+//= require_tree ./backbone/views
 //= require_tree .
