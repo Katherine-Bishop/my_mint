@@ -1,3 +1,4 @@
+<td><%= @transaction.date %></td>
 <td><%= @transaction.description %></td>
 <td><%= @transaction.amount %></td>
 <td><%= @transaction.budget_name %></td>

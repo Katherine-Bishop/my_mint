@@ -1,0 +1,1 @@
+Total Budgets: <%= @items.length %>

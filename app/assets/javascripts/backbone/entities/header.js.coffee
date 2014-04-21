@@ -9,9 +9,9 @@
 	API =
 		getHeaders: ->
 			new Entities.HeaderCollection [
-				{ name: "Transactions" }
+				{ name: "Transactions", url: Routes.transactions_path() }
+				{ name: "Budgets", url: Routes.budgets_path() }
 			]
 	window.app = App
 	App.reqres.setHandler "header:entities", ->
 		API.getHeaders()
-	console.log("foobar")	

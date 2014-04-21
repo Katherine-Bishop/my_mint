@@ -1,0 +1,2 @@
+<td><%= @budget.name %></td>
+<td><%= @budget.amount %></td>
