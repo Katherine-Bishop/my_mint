@@ -4,7 +4,7 @@
 			<div class="pull-left">
 				<span class="navbar-brand">MyMint</span>
 			</div>
-			<ul class="nav pull-right"></ul>
+			<ul class="nav nav-pills pull-right"></ul>
 		</div>
 	</div>
 </div>

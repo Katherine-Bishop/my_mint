@@ -12,7 +12,7 @@
 	
 	class List.Budget extends App.Views.ItemView
 		template: "budgets/list/templates/_budget"
-		tagName: "tr"
+		tagName: "div"
 	
 	class List.Empty extends App.Views.ItemView
 		template: "budgets/list/templates/_empty"
@@ -22,4 +22,4 @@
 		template: "budgets/list/templates/_budgets"
 		itemView: List.Budget
 		emptyView: List.Empty
-		itemViewContainer: "tbody"
+		itemViewContainer: "div"

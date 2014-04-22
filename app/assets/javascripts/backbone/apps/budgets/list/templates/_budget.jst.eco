@@ -1,2 +1,6 @@
-<td><%= @budget.name %></td>
-<td><%= @budget.amount %></td>
+<div>
+	<p class="budget-amount">$<%= @budget.budget_utilized %> of $<%= @budget.amount %></p>	<h4><%= @budget.name %></h4>
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= (@budget.budget_utilized/@budget.amount)*100 %>%;">
+	</div>
+</div>
