@@ -20,6 +20,13 @@
 	
 	class List.Transactions extends App.Views.CompositeView
 		template: "transactions/list/templates/_transactions"
+		events: 
+			'keydown': 'filterColumn'
+		filterColumn: (event)->
+			if event.keyCode == 13
+				input = @$('input').val()
+				window.input = input
+				@$('td.account:not(:contains("' + input + '"))').parent().hide()
 		itemView: List.Transaction
 		emptyView: List.Empty
 		itemViewContainer: "tbody"

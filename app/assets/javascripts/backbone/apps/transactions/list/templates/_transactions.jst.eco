@@ -4,9 +4,11 @@
 			<th>Date</th>
 			<th>Description</th>
 			<th>Amount</th>
-			<th>Cateogry</th>
+			<th>Category</th>
 			<th>Budget</th>
-			<th>Account</th>
+			<th>Account<br />
+			   <input type="text">
+			</th>  
 		</tr>
 	</thead>
 	<tbody></tbody>

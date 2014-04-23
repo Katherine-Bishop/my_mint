@@ -3,4 +3,4 @@
 <td><%= @transaction.amount %></td>
 <td><%= @transaction.category %></td>
 <td><%= @transaction.budget_name %></td>
-<td><%= @transaction.account_name %></td>
+<td class="account"><%= @transaction.account_name %></td>
