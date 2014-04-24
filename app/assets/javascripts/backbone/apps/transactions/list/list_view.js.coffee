@@ -24,9 +24,12 @@
 			'keydown': 'filterColumn'
 		filterColumn: (event)->
 			if event.keyCode == 13
-				input = @$('input').val()
+				window.event = event
+				input = @$('input:focus')
+				search = input.val()
+				inputClass = input.parent().attr('class')
 				window.input = input
-				@$('td.account:not(:contains("' + input + '"))').parent().hide()
+				@$('td.'+inputClass+':not(:contains("' + search + '"))').parent().hide()
 		itemView: List.Transaction
 		emptyView: List.Empty
 		itemViewContainer: "tbody"
