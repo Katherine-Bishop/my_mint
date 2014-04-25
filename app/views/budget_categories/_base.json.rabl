@@ -1,0 +1,1 @@
+attributes :category, :budget_name
