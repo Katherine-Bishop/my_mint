@@ -10,8 +10,8 @@
 			<th class="budget">Budget<br />
 				<input type="text">
 			</th>
-			<th class="account">Account<br />
-			   <input type="text">
+			<th style="position: absolute:" class="account">Account<br />
+			   <input type="text"><span style="position: relative; right: 20px; top: 2px;" class="glyphicon glyphicon-remove-circle" data-action="clear-filter"></span>
 			</th>  
 		</tr>
 	</thead>

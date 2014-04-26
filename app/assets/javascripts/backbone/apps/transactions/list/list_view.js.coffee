@@ -21,7 +21,8 @@
 	class List.Transactions extends App.Views.CompositeView
 		template: "transactions/list/templates/_transactions"
 		events: 
-			'keydown': 'filterColumn'
+			'keydown': 'filterColumn',
+			'click [data-action=clear-filter]': 'clearFilter'
 		filterColumn: (event)->
 			if event.keyCode == 13
 				window.event = event
@@ -30,6 +31,8 @@
 				inputClass = input.parent().attr('class')
 				window.input = input
 				@$('td.'+inputClass+':not(:contains("' + search + '"))').parent().hide()
+		clearFilter: (event)->
+			@$('tr').show()
 		itemView: List.Transaction
 		emptyView: List.Empty
 		itemViewContainer: "tbody"
