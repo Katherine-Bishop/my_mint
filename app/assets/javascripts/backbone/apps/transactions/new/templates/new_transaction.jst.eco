@@ -1,0 +1,18 @@
+<div id="new-transaction">
+	<div class="row">
+		<div class="large-12 columns">
+			<label>What's their name?</label>
+			<div class="large-6">
+				<input type="text" name="name" placeholder="Crew Member Name" />
+			</div>
+		</div>
+	</div>
+</div>
+<ul>
+	<li>
+		<button data-form-button="primary" class="btn btn-primary">Save</button>
+	</li>
+	<li>
+		<button data-form-button="cancel" class="btn btn-default">Cancel</button>
+	</li>
+</ul>	

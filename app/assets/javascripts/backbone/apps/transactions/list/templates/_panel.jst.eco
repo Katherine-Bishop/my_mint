@@ -1,2 +1,7 @@
 Total Transactions: <%= @items.length %>
-<% window.transactions = @items %>
+
+<div class="left">
+	<button id="new-transaction" class="btn btn-primary">
+		Add
+	</button>
+</div>

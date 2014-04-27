@@ -4,22 +4,30 @@
 		
 		listTransactions: ->
 			App.request "transaction:entities", (transactions) =>
-			
+						
 				@layout = @getLayoutView()
 			
 				@layout.on "show", =>
-					@showPanel transactions
-					@showTransactions transactions
+					@panelRegion transactions
+					@transactionsRegion transactions
 			
-				App.mainRegion.show @layout
-		
-		showPanel: (transactions) ->
+				App.mainRegion.show @layout	
+
+		panelRegion: (transactions) ->
+			that = this
 			panelView = @getPanelView transactions
-			@layout.panelRegion.show panelView
+			
+			panelView.on "new:transaction:button:clicked", =>
+				@newRegion()
+			
+			@layout.panelRegion.show panelView	
 		
-		showTransactions: (transactions) ->
+		transactionsRegion: (transactions) ->
 			transactionsView = @getTransactionsView transactions
-			window.transactions = transactions
+
+			transactionsView.on "itemview:transaction:clicked", (child, transaction) ->
+				App.vent.trigger "transaction:clicked", transaction
+				
 			@layout.transactionsRegion.show transactionsView
 		
 		getTransactionsView: (transactions) ->
@@ -32,3 +40,10 @@
 		
 		getLayoutView: ->
 			new List.Layout
+
+		newRegion: ->
+			region = @layout.newRegion
+			newView = App.request "new:transaction:view"
+			newView.on "form:cancel:button:clicked", =>
+				region.close()
+			region.show	newView

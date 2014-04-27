@@ -5,14 +5,21 @@
 		
 		regions:
 			panelRegion: "#panel-region"
+			newRegion: "#new-region"
 			transactionsRegion: "#transactions-region"
 	
 	class List.Panel extends App.Views.ItemView
 		template: "transactions/list/templates/_panel"
+
+		triggers:
+			"click #new-transaction" : "new:transaction:button:clicked"
 	
 	class List.Transaction extends App.Views.ItemView
 		template: "transactions/list/templates/_transaction"
 		tagName: "tr"
+
+		events:
+			"click" : -> @trigger "transaction:clicked", @model
 	
 	class List.Empty extends App.Views.ItemView
 		template: "transactions/list/templates/_empty"

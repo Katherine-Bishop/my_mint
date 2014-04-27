@@ -7,6 +7,18 @@
 	API =
 		listTransactions: ->
 			TransactionsApp.List.Controller.listTransactions()
+
+		newTransaction: ->
+			TransactionsApp.New.Controller.newTransaction()
+
+		edit: (transaction) ->
+			TransactionsApp.Edit.Controller.edit transaction
+
+	App.reqres.setHandler "new:transaction:view", ->
+		API.newTransaction()
+
+	App.vent.on "transaction:clicked", (transaction) ->
+		API.edit transaction			
 	
 	App.addInitializer ->
 		new TransactionsApp.Router

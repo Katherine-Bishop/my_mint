@@ -7,17 +7,12 @@
 		url: -> Routes.transactions_path()
 	
 	API =
-		setCurrentTransaction: (currentTransaction) ->
-			new Entities.Transaction currentTransaction
-		
 		getTransactionEntities: (cb) ->
 			transactions = new Entities.TransactionsCollection
 			transactions.fetch
 				success: ->
 					cb transactions
-	
-	App.reqres.setHandler "set:current:transaction", (currentTransaction) ->
-		API.setCurrentTransaction currentTransaction
+			transactions	
 	
 	App.reqres.setHandler "transaction:entities", (cb) ->
 		API.getTransactionEntities cb
