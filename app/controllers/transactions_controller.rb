@@ -9,6 +9,10 @@ class TransactionsController < ApplicationController
 		end	
 	end
 
+	def show
+		@transaction = Transaction.find params[:id]
+	end	
+
 	def import
 	   	begin
 	         Transaction.import(params[:file].tempfile)

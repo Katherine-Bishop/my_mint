@@ -1,1 +1,1 @@
-attributes :date, :description, :amount, :budget_name, :account_name, :category
+attributes :id, :date, :description, :amount, :budget_name, :account_name, :category

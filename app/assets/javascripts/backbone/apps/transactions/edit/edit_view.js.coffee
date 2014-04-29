@@ -15,6 +15,9 @@
 	
 	class Edit.Transaction extends App.Views.ItemView
 		template: "transactions/edit/templates/edit_transaction"
+
+		modelEvents:
+			"sync" : "render"
 		# 
 		# onFormSubmit: (data) ->
 		# 	console.log "Edit.Transaction onFormSubmit", data
