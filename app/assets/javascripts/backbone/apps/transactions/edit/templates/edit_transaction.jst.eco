@@ -62,12 +62,4 @@
 	        </div>
 		</div>
 	</fieldset>
-	<ul>
-		<li>
-			<button data-form-button="primary" class="btn btn-primary">Save</button>
-		</li>
-		<li>
-			<button data-form-button="cancel" class="btn btn-default">Cancel</button>
-		</li>
-	</ul>
 </div>

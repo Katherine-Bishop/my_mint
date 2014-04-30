@@ -3,8 +3,9 @@
 	List.Controller =
 		
 		listTransactions: ->
-			App.request "transaction:entities", (transactions) =>
-						
+			transactions = App.request "transaction:entities"
+
+			App.execute "when:fetched", transactions, =>
 				@layout = @getLayoutView()
 			
 				@layout.on "show", =>

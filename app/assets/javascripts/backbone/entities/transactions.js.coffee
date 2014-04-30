@@ -11,8 +11,7 @@
 		getTransactionEntities: (cb) ->
 			transactions = new Entities.TransactionsCollection
 			transactions.fetch
-				success: ->
-					cb transactions
+				reset: true
 			transactions	
 
 		getTransaction: (id) ->
