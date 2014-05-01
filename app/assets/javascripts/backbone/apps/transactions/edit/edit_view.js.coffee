@@ -16,6 +16,10 @@
 	class Edit.Transaction extends App.Views.ItemView
 		template: "transactions/edit/templates/edit_transaction"
 
+		form:
+			footer: false
+			focusFirstInput: true
+
 		modelEvents:
 			"sync" : "render"
 		# 
