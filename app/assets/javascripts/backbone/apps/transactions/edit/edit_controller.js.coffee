@@ -16,7 +16,8 @@
 		formRegion: (transaction) ->
 			editView = @getEditView transaction
 
-			formView = App.request "form:wrapper", editView
+			formView = App.request "form:wrapper", editView, 
+				footer: true
 
 			@layout.formRegion.show formView
 

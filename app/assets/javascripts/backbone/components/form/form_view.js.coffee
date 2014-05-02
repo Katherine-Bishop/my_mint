@@ -10,12 +10,15 @@
 		regions:
 			formContentRegion: "#form-content-region"	
 
+		initialize: ->
+			@setInstancePropertiesFor "config", "buttons"	
+
 		serializeData: ->
-			footer: @options.config.footer		
+			footer: @config.footer		
 
 		onShow: ->
 			_.defer =>
-				@focusFirstInput() if @options.config.focusFirstInput
+				@focusFirstInput() if @config.focusFirstInput
 
 		focusFirstInput: ->
 			@$(":input:visible:enabled:first").focus()
