@@ -9,12 +9,17 @@
 
 			@listenTo @formLayout, "show", @formContentRegion
 			@listenTo @formLayout, "close", @close
+			@listenTo @formLayout, "form:submit", @formSubmit
+
+		formSubmit: ->
+			console.log	'foobar'
 
 		formContentRegion: ->
 			@formLayout.formContentRegion.show @contentView		
 
 		getFormLayoutView: (options = {}) ->
 			config = @getDefaultConfig _.result(@contentView, "form")
+			_.extend config, options	
 
 			new Form.FormWrapper
 				config: config
@@ -24,6 +29,7 @@
 			_.defaults config,
 				footer: true
 				focusFirstInput: true
+				buttons: true
 
 	App.reqres.setHandler "form:wrapper", (contentView, options = {}) ->
 		throw new Error "No model found inside of form's contentView" unless contentView.model

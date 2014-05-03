@@ -8,7 +8,10 @@
 			"data-type": @getFormDataType()
 
 		regions:
-			formContentRegion: "#form-content-region"	
+			formContentRegion: "#form-content-region"
+
+		triggers:
+			"submit" : "form:submit"		
 
 		initialize: ->
 			@setInstancePropertiesFor "config", "buttons"	

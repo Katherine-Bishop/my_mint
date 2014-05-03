@@ -11,6 +11,7 @@
 					<% end %>
 				</ul>
 			<% end %>
+			<button type="submit" data-form-button="submit">Submit</button>
 		</footer>
 	<% end %>
 </div>
