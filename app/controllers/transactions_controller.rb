@@ -51,6 +51,11 @@ class TransactionsController < ApplicationController
 			render 'edit'	
 			flash[:notice] = 'Transaction was NOT successfully edited.'
 		end	
+		if @transaction.update(params[:transaction].permit(:description, :date, :amount, :category, :account_name, :budget_id))
+			render "transactions/show"
+		else
+			respond_with @transaction
+		end		
 	end	
 
 	def destroy

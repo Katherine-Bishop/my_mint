@@ -12,7 +12,12 @@
 			@listenTo @formLayout, "form:submit", @formSubmit
 
 		formSubmit: ->
-			console.log	'foobar'
+			data = Backbone.Syphon.serialize @formLayout
+			model = @contentView.model
+			@processFormSubmit data,model
+
+		processFormSubmit: (data, model) ->
+			model.save data	
 
 		formContentRegion: ->
 			@formLayout.formContentRegion.show @contentView		
