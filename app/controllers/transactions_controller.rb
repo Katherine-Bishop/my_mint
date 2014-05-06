@@ -44,18 +44,20 @@ class TransactionsController < ApplicationController
 	
 	def update
 		@transaction = Transaction.find(params[:id])
+
 		if @transaction.update(params[:transaction].permit(:description, :date, :amount, :category, :account_name, :budget_id))
-			redirect_to transactions_path
-			flash[:notice] = 'Transaction was successfully edited.'
+			render "transactions/show"
+			# redirect_to transactions_path
+			# flash[:notice] = 'Transaction was successfully edited.'
 		else
 			render 'edit'	
 			flash[:notice] = 'Transaction was NOT successfully edited.'
 		end	
-		if @transaction.update(params[:transaction].permit(:description, :date, :amount, :category, :account_name, :budget_id))
-			render "transactions/show"
-		else
-			respond_with @transaction
-		end		
+		# if @transaction.update(params[:transaction].permit(:description, :date, :amount, :category, :account_name, :budget_id))
+		# 	render "transactions/show"
+		# else
+		# 	respond_with @transaction
+		# end		
 	end	
 
 	def destroy
