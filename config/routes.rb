@@ -65,6 +65,5 @@ MyMint::Application.routes.draw do
   resources :budget_categories 
 
   # get "static" => "application#static" 
-  root :to => 'application#index'
 
 end
