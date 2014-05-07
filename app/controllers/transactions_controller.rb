@@ -46,8 +46,8 @@ class TransactionsController < ApplicationController
 		@transaction = Transaction.find(params[:id])
 
 		if @transaction.update(params[:transaction].permit(:description, :date, :amount, :category, :account_name, :budget_id))
-			render "transactions/show"
-			# redirect_to transactions_path
+			# render "transactions/show"
+			redirect_to transactions_path
 			# flash[:notice] = 'Transaction was successfully edited.'
 		else
 			render 'edit'	
