@@ -22,7 +22,7 @@
 
 		modelEvents:
 			"sync" : "render"
-		# 
+		
 		# onFormSubmit: (data) ->
 		# 	console.log "Edit.Transaction onFormSubmit", data
 		# 	false

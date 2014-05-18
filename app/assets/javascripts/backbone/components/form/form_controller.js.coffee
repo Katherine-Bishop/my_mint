@@ -13,11 +13,14 @@
 
 		formSubmit: ->
 			data = Backbone.Syphon.serialize @formLayout
-			model = @contentView.model
-			@processFormSubmit data,model
+			if @contentView.triggerMethod("form:submit", data) isnt false
+				model = @contentView.model
+				collection = @contentView.collection
+				@processFormSubmit data, model, collection
 
-		processFormSubmit: (data, model) ->
-			model.save data	
+		processFormSubmit: (data, model, collection) ->
+			model.save data,
+				collection
 
 		formContentRegion: ->
 			@formLayout.formContentRegion.show @contentView		

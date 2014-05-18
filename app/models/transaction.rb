@@ -1,5 +1,9 @@
 class Transaction < ActiveRecord::Base
 	has_one :budget
+
+	# validates_presence_of :description
+	validates_presence_of :date, :unless => proc { new_record? }
+	
 	def self.import(file)
 	  	CSV.foreach(file, headers: true) do |row|
 	  		#skips credit card payments
