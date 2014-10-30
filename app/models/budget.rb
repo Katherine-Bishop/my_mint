@@ -9,4 +9,13 @@ class Budget < ActiveRecord::Base
 	    end	
 	    return budget_utilized
   	end
+
+  	def categories
+  		categories = []
+  		budget_categories = BudgetCategory.where(:budget_id => id)
+  		budget_categories.each do |budget_category|
+  			categories.push(budget_category.category)
+  		end
+  		return categories
+  	end	
 end

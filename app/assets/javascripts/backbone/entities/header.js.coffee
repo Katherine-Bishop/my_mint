@@ -11,6 +11,7 @@
 			new Entities.HeaderCollection [
 				{ name: "Transactions", url: Routes.transactions_path() }
 				{ name: "Budgets", url: Routes.budgets_path() }
+				{ name: "Budget Categories", url: Routes.budget_categories_path() }
 			]
 	window.app = App
 	App.reqres.setHandler "header:entities", ->

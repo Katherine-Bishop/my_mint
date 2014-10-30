@@ -1,0 +1,8 @@
+<div>
+	<h4><%= @name %></h4>
+
+	<% for category in @categories: %>
+	  <p><%= category %></p>
+	<% end %>	
+
+</div>

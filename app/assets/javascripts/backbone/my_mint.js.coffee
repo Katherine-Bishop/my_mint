@@ -2,7 +2,7 @@
 	
 	App = new Marionette.Application
 
-	App.rootRoute = Routes.transactions_path()
+	App.rootRoute = Routes.budgets_path()
 	
 	App.addRegions
 		headerRegion: "#header-region"

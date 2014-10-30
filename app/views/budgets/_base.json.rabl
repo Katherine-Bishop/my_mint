@@ -1,1 +1,1 @@
-attributes :name, :amount, :budget_utilized
+attributes :name, :amount, :budget_utilized, :categories
